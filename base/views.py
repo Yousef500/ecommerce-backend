@@ -2,10 +2,11 @@ from rest_framework.decorators import api_view
 from rest_framework.exceptions import ValidationError
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.response import Response
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 from .models import Product
 # Create your views here.
-from .serializers import ProductSerializer
+from .serializers import ProductSerializer, MyTokenObtainPairSerializer
 
 
 @api_view(['GET'])
@@ -62,3 +63,7 @@ class ProductDetailAPIView(RetrieveUpdateDestroyAPIView):
         product = Product.objects.get(name=self.request.data['name'])
         image = product.image
         serializer.save(image=image)
+
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
