@@ -21,9 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="dcd064eb-2422-4c3e-84c0-6cb3693e1e80" name="Default Changelist" comment="added simplejwt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +46,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1tCYGMTROoOYULxzI88lcGYFr0l" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -109,6 +112,9 @@
       <workItem from="1623166689762" duration="818000" />
       <workItem from="1623205494083" duration="178000" />
       <workItem from="1623262138067" duration="4407000" />
+      <workItem from="1623295055833" duration="56000" />
+      <workItem from="1623407437323" duration="3382000" />
+      <workItem from="1623430516309" duration="377000" />
     </task>
     <task id="LOCAL-00001" summary="added simplejwt">
       <created>1623205566332</created>
@@ -164,5 +170,9 @@
       <screen x="0" y="0" width="1280" height="994" />
     </state>
     <state x="141" y="0" key="SettingsEditor/0.0.1280.994@0.0.1280.994" timestamp="1622274554842" />
+    <state x="1145" y="229" width="756" height="1156" key="dock-window-1" timestamp="1623429346643">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="1145" y="229" width="756" height="1156" key="dock-window-1/0.0.1920.1170@0.0.1920.1170" timestamp="1623429346643" />
   </component>
 </project>
