@@ -37,10 +37,31 @@ class UserProfileAPIView(APIView):
     # serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
 
+    # def get_queryset(self):
+    #   user = self.request.user
+    #   print(user)
+    #     # serializer = UserSerializer(user)
+    #   return user
+
     def get(self, request):
         user = request.user
-        serializer = UserSerializer(user)
-        return Response(serializer.data)
+        data = UserSerializer(user).data
+        return Response(data, status=status.HTTP_200_OK)
+
+    def put(self, request):
+        user = request.user
+        serializer = UserSerializerWithToken(user)
+        data = request.data
+        user.first_name = data['name']
+        user.username = data['email']
+        user.email = data['email']
+
+        if data['password'] != '':
+            user.password = make_password(data['password'])
+
+        user.save()
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 class UserListAPIView(ListAPIView):

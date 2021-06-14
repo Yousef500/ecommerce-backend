@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dcd064eb-2422-4c3e-84c0-6cb3693e1e80" name="Default Changelist" comment="added simplejwt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/views/user_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views/user_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +112,10 @@
       <workItem from="1623295055833" duration="56000" />
       <workItem from="1623407437323" duration="3382000" />
       <workItem from="1623430516309" duration="520000" />
-      <workItem from="1623601876061" duration="648000" />
+      <workItem from="1623601876061" duration="958000" />
+      <workItem from="1623683202545" duration="54000" />
+      <workItem from="1623688277236" duration="1522000" />
+      <workItem from="1623693035375" duration="986000" />
     </task>
     <task id="LOCAL-00001" summary="added simplejwt">
       <created>1623205566332</created>
