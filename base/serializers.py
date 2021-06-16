@@ -3,7 +3,7 @@ from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from .models import Product
+from .models import Product, Order
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -64,3 +64,43 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
             data[k] = v
 
         return data
+
+
+class ShippingAddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = '__all__'
+
+
+class OrderItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = '__all__'
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    orderItems = serializers.SerializerMethodField(read_only=True)
+    shippingAddress = serializers.SerializerMethodField(read_only=True)
+    user = serializers.SerializerMethodField(read_only=True)
+
+    def get_user(self, obj):
+        user = obj.user
+        serializer = UserSerializer(user)
+        return serializer.data
+
+    def get_orders(self, obj):
+        items = obj.orderItems_set.all()
+        serializer = OrderItemSerializer(items, many=True)
+        return serializer.data
+
+    def get_shippingAddress(self, obj):
+        try:
+            address = ShippingAddressSerializer(obj.shippingAddress).data
+        except:
+            address = False
+
+        return address
+
+    class Meta:
+        model = Order
+        fields = '__all__'

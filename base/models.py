@@ -38,8 +38,8 @@ class Review(models.Model):
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     paymentMethod = models.CharField(max_length=200, null=True, blank=True)
-    TaxPrice = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
-    ShippingPrice = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
+    taxPrice = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
+    shippingPrice = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
     totalPrice = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
     isPaid = models.BooleanField(default=False)
     paidAt = models.DateTimeField(auto_now_add=False, null=True, blank=True)
