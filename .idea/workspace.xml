@@ -25,6 +25,7 @@
       <change beforePath="$PROJECT_DIR$/base/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/urls/order_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/urls/order_urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/views/order_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views/order_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +120,11 @@
       <workItem from="1623688277236" duration="1522000" />
       <workItem from="1623693035375" duration="1046000" />
       <workItem from="1623771022441" duration="707000" />
-      <workItem from="1623856334768" duration="2305000" />
+      <workItem from="1623856334768" duration="2435000" />
+      <workItem from="1623948070930" duration="3288000" />
+      <workItem from="1623997423872" duration="4172000" />
+      <workItem from="1624011022455" duration="4419000" />
+      <workItem from="1624115244270" duration="1171000" />
     </task>
     <task id="LOCAL-00001" summary="added simplejwt">
       <created>1623205566332</created>

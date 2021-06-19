@@ -1,5 +1,6 @@
 from rest_framework import permissions
 from rest_framework import status
+from rest_framework.generics import RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework.validators import ValidationError
 from rest_framework.views import APIView
@@ -12,7 +13,14 @@ from base.serializers import OrderSerializer
 class AddOrderItem(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
-    def post(self, request, format=None):
+    def get(self, request):
+        if request.user.is_staff:
+            serializer = OrderSerializer(Order.objects.all(), many=True)
+            return Response(serializer.data)
+        else:
+            raise ValidationError({'detail': 'You are not authorized view all orders'})
+
+    def post(self, request):
         user = self.request.user
         data = self.request.data
         orderItems = data['orderItems']
@@ -25,7 +33,7 @@ class AddOrderItem(APIView):
                 user=user,
                 paymentMethod=data['paymentMethod'],
                 taxPrice=data['taxPrice'],
-                ShippingAddress=data['ShippingAddress'],
+                shippingPrice=data['shippingPrice'],
                 totalPrice=data['totalPrice']
             )
 
@@ -57,3 +65,20 @@ class AddOrderItem(APIView):
 
             serializer = OrderSerializer(order)
             return Response(serializer.data)
+
+
+class OrderDetailAPIView(RetrieveAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        try:
+            order = Order.objects.filter(_id=self.kwargs['pk'])
+            if user.is_staff or order.values('user')[0]['user'] == user.id:
+                return order
+            else:
+                raise ValidationError({'detail': 'Not Authorized to view this order'}, code=status.HTTP_400_BAD_REQUEST)
+        except:
+            raise ValidationError({'detail': 'Order does not exist'}, code=status.HTTP_400_BAD_REQUEST)
