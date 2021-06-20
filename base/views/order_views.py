@@ -1,6 +1,8 @@
+from datetime import datetime
+
 from rest_framework import permissions
 from rest_framework import status
-from rest_framework.generics import RetrieveAPIView
+from rest_framework.generics import RetrieveAPIView, UpdateAPIView
 from rest_framework.response import Response
 from rest_framework.validators import ValidationError
 from rest_framework.views import APIView
@@ -82,3 +84,12 @@ class OrderDetailAPIView(RetrieveAPIView):
                 raise ValidationError({'detail': 'Not Authorized to view this order'}, code=status.HTTP_400_BAD_REQUEST)
         except:
             raise ValidationError({'detail': 'Order does not exist'}, code=status.HTTP_400_BAD_REQUEST)
+
+
+class OrderPayAPIView(UpdateAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def perform_update(self, serializer):
+        serializer.save(isPaid=True, paidAt=datetime.now())
