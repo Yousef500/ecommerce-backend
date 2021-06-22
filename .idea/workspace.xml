@@ -21,8 +21,19 @@
   <component name="ChangeListManager">
     <list default="true" id="dcd064eb-2422-4c3e-84c0-6cb3693e1e80" name="Default Changelist" comment="added simplejwt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/migrations/0002_order_orderitem_review_shippingaddress.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/migrations/0002_order_orderitem_review_shippingaddress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/migrations/0003_product_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/migrations/0003_product_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/urls/order_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/urls/order_urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/urls/user_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/urls/user_urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/views/order_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views/order_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/views/product_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views/product_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/views/user_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views/user_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +70,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\ecommerce\backend\" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Projects\ecommerce\backend\base" />
     </key>
@@ -125,7 +139,9 @@
       <workItem from="1624115244270" duration="1495000" />
       <workItem from="1624202340160" duration="729000" />
       <workItem from="1624206148381" duration="155000" />
-      <workItem from="1624288609026" duration="468000" />
+      <workItem from="1624288609026" duration="1210000" />
+      <workItem from="1624375661392" duration="135000" />
+      <workItem from="1624375807391" duration="1474000" />
     </task>
     <task id="LOCAL-00001" summary="added simplejwt">
       <created>1623205566332</created>
@@ -157,10 +173,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="added simplejwt" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="419" y="44" key="FileChooserDialogImpl" timestamp="1622274475111">
-      <screen x="0" y="0" width="1280" height="994" />
+    <state x="1170" y="332" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1624375908092">
+      <screen x="0" y="0" width="1920" height="1170" />
+    </state>
+    <state x="1170" y="332" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1170@0.0.1920.1170" timestamp="1624375908092" />
+    <state x="629" y="52" key="FileChooserDialogImpl" timestamp="1624375699951">
+      <screen x="0" y="0" width="1920" height="1170" />
     </state>
     <state x="419" y="44" key="FileChooserDialogImpl/0.0.1280.994@0.0.1280.994" timestamp="1622274475111" />
+    <state x="629" y="52" key="FileChooserDialogImpl/0.0.1920.1170@0.0.1920.1170" timestamp="1624375699951" />
     <state width="1220" height="103" key="GridCell.Tab.0.bottom" timestamp="1622808849327">
       <screen x="0" y="0" width="1280" height="994" />
     </state>

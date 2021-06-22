@@ -1,7 +1,7 @@
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
 from rest_framework import status
-from rest_framework.generics import ListAPIView, CreateAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, DestroyAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework.validators import ValidationError
@@ -72,3 +72,44 @@ class UserListAPIView(ListAPIView):
 
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
+
+
+class UserDeleteAPIView(DestroyAPIView):
+    serializer_class = UserSerializerWithToken
+    permission_classes = [IsAdminUser]
+
+    def get_queryset(self):
+        user = User.objects.filter(id=self.kwargs['pk'])
+        if user.exists():
+            return user
+        else:
+            return Response('No such user')
+
+    def perform_destroy(self, request):
+        userToDestroy = self.get_queryset()
+        userToDestroy.delete()
+        return Response('deleted')
+
+
+class UserUpdateAPIView(RetrieveUpdateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [IsAdminUser]
+
+    def get_object(self):
+        user = User.objects.get(id=self.kwargs['pk'])
+        return user
+
+    def perform_update(self, serializer):
+        user = User.objects.get(id=self.kwargs['pk'])
+        data = self.request.data
+        user.first_name = data['name']
+        user.username = data['email']
+        user.email = data['email']
+        user.is_staff = data['isAdmin']
+
+        user.save()
+
+        serializer = UserSerializer(user)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
