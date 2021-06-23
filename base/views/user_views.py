@@ -101,7 +101,7 @@ class UserUpdateAPIView(RetrieveUpdateAPIView):
         return user
 
     def perform_update(self, serializer):
-        user = User.objects.get(id=self.kwargs['pk'])
+        user = self.get_object()
         data = self.request.data
         user.first_name = data['name']
         user.username = data['email']

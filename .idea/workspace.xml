@@ -21,18 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dcd064eb-2422-4c3e-84c0-6cb3693e1e80" name="Default Changelist" comment="added simplejwt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/migrations/0002_order_orderitem_review_shippingaddress.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/migrations/0002_order_orderitem_review_shippingaddress.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/migrations/0003_product_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/migrations/0003_product_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/urls/order_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/urls/order_urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/urls/user_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/urls/user_urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/views/order_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views/order_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/views/product_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views/product_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/views/user_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views/user_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
@@ -141,7 +129,8 @@
       <workItem from="1624206148381" duration="155000" />
       <workItem from="1624288609026" duration="1210000" />
       <workItem from="1624375661392" duration="135000" />
-      <workItem from="1624375807391" duration="1474000" />
+      <workItem from="1624375807391" duration="1648000" />
+      <workItem from="1624462561428" duration="1570000" />
     </task>
     <task id="LOCAL-00001" summary="added simplejwt">
       <created>1623205566332</created>
