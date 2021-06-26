@@ -1,4 +1,7 @@
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework import status
+from rest_framework.generics import ListCreateAPIView, RetrieveAPIView, DestroyAPIView, \
+    UpdateAPIView
+from rest_framework.permissions import IsAdminUser
 from rest_framework.validators import ValidationError
 
 from base.models import Product
@@ -14,18 +17,28 @@ class ProductListAPIView(ListCreateAPIView):
 
     def perform_create(self, serializer):
         user = self.request.user
-        name = self.request.data['name']
-        product = Product.objects.filter(name=name)
-        if product.exists():
-            raise ValidationError("This Product already exists")
-        serializer.save(user=user)
+        if user.is_staff:
+            serializer.save(user=user)
+        else:
+            raise ValidationError({'detail': 'You are not authorized to create products'},
+                                  code=status.HTTP_400_BAD_REQUEST)
 
 
-class ProductDetailAPIView(RetrieveUpdateDestroyAPIView):
+class ProductDetailAPIView(RetrieveAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
-    # permission_classes = [permissions.IsAuthenticated]
+
+class ProductDeleteAPIView(DestroyAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    permission_classes = [IsAdminUser]
+
+
+class ProductUpdateAPIView(UpdateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    permission_classes = [IsAdminUser]
 
     def perform_update(self, serializer):
         product = Product.objects.get(name=self.request.data['name'])
