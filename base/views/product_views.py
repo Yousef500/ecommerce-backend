@@ -1,7 +1,9 @@
 from rest_framework import status
+from rest_framework.decorators import api_view
 from rest_framework.generics import ListCreateAPIView, RetrieveAPIView, DestroyAPIView, \
     UpdateAPIView
 from rest_framework.permissions import IsAdminUser
+from rest_framework.response import Response
 from rest_framework.validators import ValidationError
 
 from base.models import Product
@@ -40,9 +42,20 @@ class ProductUpdateAPIView(UpdateAPIView):
     serializer_class = ProductSerializer
     permission_classes = [IsAdminUser]
 
-    def perform_update(self, serializer):
-        product = Product.objects.get(name=self.request.data['name'])
-        if self.request.data['image']:
-            serializer.save(image=self.request.data['image'])
-        else:
-            serializer.save(image=product.image)
+    # def perform_update(self, serializer):
+    #     product = Product.objects.get(name=self.request.data['name'])
+    #     if self.request.data['image']:
+    #         serializer.save(image=self.request.data['image'])
+    #     else:
+    #         serializer.save(image=product.image)
+
+
+@api_view(['POST'])
+def uploadImage(request):
+    data = request.data
+    product = Product.objects.get(_id=data['product_id'])
+
+    product.image = request.FILES.get("image")
+    product.save()
+
+    return Response('Image was uploaded');
