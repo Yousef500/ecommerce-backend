@@ -12,13 +12,16 @@ from base.models import Product, Order, OrderItem, ShippingAddress
 from base.serializers import OrderSerializer
 
 
-class AddOrderItem(APIView):
+class ListAddOrderItem(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
         user = request.user
-        orders = user.order_set.all()
-        serializer = OrderSerializer(orders, many=True)
+        if user.is_staff:
+            orders = Order.objects.all()
+        else:
+            orders = user.order_set.all()
+        serializer = OrderSerializer(orders, many=(len(orders) > 1))
         return Response(serializer.data)
 
     def post(self, request):
@@ -91,3 +94,12 @@ class OrderPayAPIView(UpdateAPIView):
 
     def perform_update(self, serializer):
         serializer.save(isPaid=True, paidAt=datetime.now())
+
+
+class OrderDeliverAPIView(UpdateAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+    permission_classes = [permissions.IsAdminUser]
+
+    def perform_update(self, serializer):
+        serializer.save(isDelivered=True, deliveredAt=datetime.now())
