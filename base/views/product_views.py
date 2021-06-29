@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 from rest_framework.validators import ValidationError
 
-from base.models import Product
+from base.models import Product, Review
 # Create your views here.
 from base.serializers import ProductSerializer
 

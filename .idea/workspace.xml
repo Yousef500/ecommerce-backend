@@ -22,7 +22,8 @@
     <list default="true" id="dcd064eb-2422-4c3e-84c0-6cb3693e1e80" name="Default Changelist" comment="added simplejwt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/urls/order_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/urls/order_urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/views/order_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views/order_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/views/product_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views/product_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,6 +139,8 @@
       <workItem from="1624817004836" duration="2159000" />
       <workItem from="1624819881615" duration="23000" />
       <workItem from="1624893021082" duration="1553000" />
+      <workItem from="1624899239678" duration="33000" />
+      <workItem from="1624981009364" duration="2027000" />
     </task>
     <task id="LOCAL-00001" summary="added simplejwt">
       <created>1623205566332</created>
