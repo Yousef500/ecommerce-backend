@@ -12,10 +12,19 @@ from base.serializers import ProductSerializer
 
 
 class ProductListAPIView(ListCreateAPIView):
-    queryset = Product.objects.all()
+    # queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
+    # pagination_class = ProductSetPagination
+
     # permission_classes = [permissions.IsAuthenticated]
+    def get_queryset(self):
+        query = self.request.query_params.get('keyword')
+        if query:
+            products = Product.objects.filter(name__icontains=query)
+        else:
+            products = Product.objects.all()
+        return products
 
     def perform_create(self, serializer):
         user = self.request.user
