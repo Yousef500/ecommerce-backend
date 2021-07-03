@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcd064eb-2422-4c3e-84c0-6cb3693e1e80" name="Default Changelist" comment="added simplejwt">
+      <change afterPath="$PROJECT_DIR$/base/pagination.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/alexa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/mouse.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/playstation_MGmRYYy.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base/urls/product_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/urls/product_urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base/views/product_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/views/product_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
@@ -145,7 +150,7 @@
       <workItem from="1625066868809" duration="2383000" />
       <workItem from="1625073060159" duration="3387000" />
       <workItem from="1625210966560" duration="821000" />
-      <workItem from="1625287646765" duration="6052000" />
+      <workItem from="1625287646765" duration="7058000" />
     </task>
     <task id="LOCAL-00001" summary="added simplejwt">
       <created>1623205566332</created>

@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.generics import ListCreateAPIView, RetrieveAPIView, DestroyAPIView, \
-    UpdateAPIView
+    UpdateAPIView, ListAPIView
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.validators import ValidationError
@@ -34,6 +34,13 @@ class ProductListAPIView(ListCreateAPIView):
             raise ValidationError(
                 {'detail': 'You are not authorized to create products'},
                 code=status.HTTP_400_BAD_REQUEST)
+
+
+class TopProductsAPIView(ListAPIView):
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        return Product.objects.filter(rating__gte=4).order_by('-rating')[0:5]
 
 
 class ProductDetailAPIView(RetrieveAPIView):

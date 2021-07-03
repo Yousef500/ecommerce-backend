@@ -167,7 +167,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'DEFAULT_PAGINATION_CLASS': 'base.pagination.YourPagination',
-    'PAGE_SIZE': 20
+    'PAGE_SIZE': 4
 }
 
 # Default primary key field type
